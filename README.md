@@ -1,5 +1,9 @@
 # Checking network topology from the viewpoint of endpoint machine
 
+## Note
+
+Server mentioned here can be a machine running a service, or a client machine connecting to a server. These tools can be used between client machines, server machine, or a client and a server machine.
+
 ## Gather information
 
 ### Synopsis
@@ -135,8 +139,12 @@ Typically, these commands allow you to find the routes that each server takes wh
 
 ## Other
 
-Consider using `iperf` to test performance of your link.
+Consider using [iperf](https://discuss.aerospike.com/t/benchmarking-throughput-and-packet-count-with-iperf3/2791) to test performance of your link.
 
-Consider checking packet loss by using `netstat -s` for different protocols.
+Consider checking packet loss by using `netstat -s` for different protocols on each server.
 
 For network issues, always check `dmesg` for hardware faults. and `iptables -L -vn` for rules on the local machine.
+
+Also check `mpstat -P ALL` to see load on the cores and io-wait.
+
+Further checks should include investigating `/proc/interrupts` to ensure interrupts are correctly balanced on all the servers.
