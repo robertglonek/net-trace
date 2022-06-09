@@ -132,3 +132,11 @@ Command | Meaning | Notes
 `traceroute -T 172.16.0.5` | trace route using TCP packets | should work by default to the last hop, unless packets are specifically dropped; if they are, modify port using `-p 3002` for example
 
 Typically, these commands allow you to find the routes that each server takes when communicating with another server. Traceroute also allows to check which hop has latencies and which hop may be dropping or blocking packets. Traceroute should be checked from server A to B and from B to A, as different routes may be present in each direction.
+
+## Other
+
+Consider using `iperf` to test performance of your link.
+
+Consider checking packet loss by using `netstat -s` for different protocols.
+
+For network issues, always check `dmesg` for hardware faults. and `iptables -L -vn` for rules on the local machine.
