@@ -31,7 +31,7 @@ In this example, the subnet is `172.17.0.0/16`, i.e. `172.17.0.0 - 172.17.255.25
 ### Routes
 
 ```bash
-$ ip roue ls
+$ ip route ls
 default via 172.17.0.1 dev eth0 
 172.16.0.0/24 via 172.17.52.1 dev eth0 
 172.17.0.0/16 dev eth0 proto kernel scope link src 172.17.0.2 
